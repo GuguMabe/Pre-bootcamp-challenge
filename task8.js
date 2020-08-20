@@ -5,8 +5,30 @@ function convertToTime(num)
 //get the remainder which will be the minutes
   var minutes = num % 60;
 
-  return hours + "hours ," + minutes + "minutes" ;         
-} 
+    if (hours === 1 && minutes === 1){
+    return hours + "hour, " + minutes + "minute" ;
 
+    }else if(hours > 1 && minutes > 1){
+    return hours + "hours, " + minutes + "minutes";
+
+   }else if(hours > 1 && minutes===1){
+    return hours + "hours, " + minutes + "minute";
+
+   }else if (hours===1 && minutes > 1){
+    return hours + "hour, " + minutes + "minutes";
+
+   }else if (hours === 1 && minutes === 0) {
+     return hours + "hour";
+
+   }else if(hours > 1 && minutes === 0) {
+     return hours + "hours";
+  
+   }else if(hours===0 && minutes === 1){
+     return minutes + "minute";
+
+   }else if (hours===0 && minutes > 1)
+     return minutes + "minutes";
+}
 //call function to test
-console.log(convertToTime(240));
+console.log(convertToTime(181));
+
